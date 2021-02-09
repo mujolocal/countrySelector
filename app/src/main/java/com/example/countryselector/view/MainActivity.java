@@ -9,13 +9,14 @@ import android.renderscript.ScriptGroup;
 import com.example.countryselector.R;
 import com.example.countryselector.adapter.RecycleAdapter;
 import com.example.countryselector.databinding.ActivityMainBinding;
+import com.example.countryselector.model.CountryInfo;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     LinearLayoutManager linearLayoutManager;
-    private ArrayList<String> strings = new ArrayList<>();
+    private ArrayList<CountryInfo> countries = new ArrayList<>();
     ActivityMainBinding activityMainBinding;
     private RecycleAdapter recycleAdapter;
     @Override
@@ -23,16 +24,27 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         activityMainBinding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(activityMainBinding.getRoot());
-        strings.add("red");
-        strings.add("white");
-        strings.add("bue");
-        strings.add("red");
-        strings.add("white");
-        strings.add("bue");
-        strings.add("red");
-        strings.add("white");
-        strings.add("bue");
-        recycleAdapter = new RecycleAdapter(strings);
+        countries.add(new CountryInfo("red","red","red"));
+        countries.add(new CountryInfo("red","red","red"));
+        countries.add(new CountryInfo("red","red","red"));
+        countries.add(new CountryInfo("red","red","red"));
+        countries.add(new CountryInfo("red","red","red"));
+        countries.add(new CountryInfo("red","red","red"));
+        countries.add(new CountryInfo("red","red","red"));
+        countries.add(new CountryInfo("red","red","red"));
+        countries.add(new CountryInfo("red","red","red"));
+        countries.add(new CountryInfo("red","red","red"));
+        countries.add(new CountryInfo("red","red","red"));
+        countries.add(new CountryInfo("red","red","red"));
+        countries.add(new CountryInfo("red","red","red"));
+        countries.add(new CountryInfo("red","red","red"));
+        countries.add(new CountryInfo("red","red","red"));
+        countries.add(new CountryInfo("red","red","red"));
+        countries.add(new CountryInfo("red","red","red"));countries.add(new CountryInfo("red","red","red"));
+
+
+
+        recycleAdapter = new RecycleAdapter(countries);
         linearLayoutManager = new LinearLayoutManager(this);
         activityMainBinding.recyclerView.setAdapter(recycleAdapter);
         activityMainBinding.recyclerView.setLayoutManager(linearLayoutManager);

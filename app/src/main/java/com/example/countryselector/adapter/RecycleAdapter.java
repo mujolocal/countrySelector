@@ -7,13 +7,14 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.countryselector.databinding.RecycleItemBinding;
+import com.example.countryselector.model.CountryInfo;
 
 import java.util.ArrayList;
 
 public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.AdapterViewHolder> {
-    private ArrayList<String> strings;
-    public RecycleAdapter(ArrayList<String> strings){
-        this.strings = strings;
+    private ArrayList<CountryInfo> countries;
+    public RecycleAdapter(ArrayList<CountryInfo> countries){
+        this.countries = countries;
 
     }
 
@@ -30,13 +31,13 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.AdapterV
 
     @Override
     public void onBindViewHolder(@NonNull RecycleAdapter.AdapterViewHolder holder, int position) {
-        holder.setLayout(strings.get(position));
+        holder.setLayout(countries.get(position).getName());
     }
 
 
     @Override
     public int getItemCount() {
-        return strings.size();
+        return countries.size();
     }
 
     class AdapterViewHolder extends RecyclerView.ViewHolder{
