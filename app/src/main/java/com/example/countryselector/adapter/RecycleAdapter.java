@@ -17,6 +17,9 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.AdapterV
         this.countries = countries;
 
     }
+    public void setCountries(ArrayList<CountryInfo> countries) {
+        this.countries = countries;
+    }
 
     @NonNull
     @Override

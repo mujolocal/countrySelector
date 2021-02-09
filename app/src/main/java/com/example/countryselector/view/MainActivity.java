@@ -27,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
     private RecycleAdapter recycleAdapter;
     private MainViewModel mainViewModel;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onChanged(List<CountryInfo> countryInfos) {
                 countries = (ArrayList<CountryInfo>) countryInfos;
+                recycleAdapter.setCountries((ArrayList<CountryInfo>) countryInfos);
+                recycleAdapter.notifyDataSetChanged();
             }
         });
 
